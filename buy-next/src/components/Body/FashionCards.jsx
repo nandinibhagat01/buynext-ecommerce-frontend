@@ -1,17 +1,23 @@
+import FashionCard from "./FashionCard";
+import FashionCardsData from "./FashionCardsData";
+
 const FashionCards = () => {
   return (
     <>
-      <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div className="my-3 p-3">
-          <h2 className="display-5">Another headline</h2>
-          <p className="lead">And an even wittier subheading.</p>
-        </div>
-        <div
-          className="bg-dark shadow-sm mx-auto"
-          style={{width: "80%", height: "300px", borderRadius: "21px 21px 0 0"}}
-        ></div>
+    <div className="row row-cols-1 row-cols-md-3 g-4">
+      {FashionCardsData.map((fashionItem)=>(
+        <FashionCard key={fashionItem.id} fashionItem={fashionItem}/>
+      ))}
       </div>
     </>
   );
 };
 export default FashionCards;
+
+/*
+
+<div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        {ProductCardData.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>*/

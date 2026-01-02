@@ -1,143 +1,62 @@
+import kidImg1 from "../../images/Kids/kid_img2.jpeg";
+import kidImg2 from "../../images/Kids/kid_img3.jpeg";
+import kidImg3 from "../../images/Kids/kid_img4.jpeg";
+import "./CarouselCard.css";
+
 const CarouselCard = () => {
   return (
-    <>
-      <div id="myCarousel" className="carousel slide mb-6" data-bs-ride="carousel">
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="0"
-            className=""
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-            className="active"
-            aria-current="true"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-            className=""
-          ></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item">
-            <svg
-              aria-hidden="true"
-              className="bd-placeholder-img "
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <div className="container">
-              <div className="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p className="opacity-75">
-                  Some representative placeholder content for the first slide of
-                  the carousel.
-                </p>
-                <p>
-                  <a className="btn btn-lg btn-primary" href="#">
-                    Sign up today
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="carousel-item active">
-            <svg
-              aria-hidden="true"
-              className="bd-placeholder-img "
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <div className="container">
-              <div className="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>
-                  Some representative placeholder content for the second slide
-                  of the carousel.
-                </p>
-                <p>
-                  <a className="btn btn-lg btn-primary" href="#">
-                    Learn more
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <svg
-              aria-hidden="true"
-              className="bd-placeholder-img "
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-            </svg>
-            <div className="container">
-              <div className="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>
-                  Some representative placeholder content for the third slide of
-                  this carousel.
-                </p>
-                <p>
-                  <a className="btn btn-lg btn-primary" href="#">
-                    Browse gallery
-                  </a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide="prev"
-        >
-          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide="next"
-        >
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Next</span>
-        </button>
+    <div
+      id="myCarousel"
+      className="carousel slide"
+      data-bs-ride="carousel"
+      data-bs-interval="3000"
+      data-bs-pause="false"
+    >
+      {/* Indicators */}
+      <div className="carousel-indicators">
+        <button data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" />
+        <button data-bs-target="#myCarousel" data-bs-slide-to="1" />
+        <button data-bs-target="#myCarousel" data-bs-slide-to="2" />
       </div>
-    </>
+
+      {/* Slides */}
+      <div className="carousel-inner">
+        <div className="carousel-item active">
+          <img src={kidImg1} className="d-block w-100" alt="Slide 1" />
+        </div>
+
+        <div className="carousel-item">
+          <img src={kidImg2} className="d-block w-100" alt="Slide 2" />
+        </div>
+
+        <div className="carousel-item">
+          <img src={kidImg3} className="d-block w-100" alt="Slide 3" />
+        </div>
+      </div>
+
+      {/* Left Arrow */}
+      <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+
+      {/* Right Arrow */}
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
+    </div>
   );
 };
+
 export default CarouselCard;

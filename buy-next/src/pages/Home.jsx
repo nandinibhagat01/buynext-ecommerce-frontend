@@ -9,10 +9,14 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Itemsbar/>
+      <Itemsbar />
       <CarouselCard />
-      <ProductCards />
-      <FashionCards />
+      <div className="container py-5">
+        <ProductCards />
+      </div>
+      <div className="container-fluid py-5">
+        <FashionCards />
+      </div>
       <Footer />
     </>
   );
