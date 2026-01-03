@@ -1,38 +1,32 @@
 const Itemsbar = () => {
+  const categories = [
+    { name: "Women", value: "women" },
+    { name: "Men", value: "men" },
+    { name: "Kids", value: "kids" },
+    { name: "Home Accessories", value: "home" },
+    { name: "Kitchen Items", value: "kitchen" },
+    { name: "Beauty & Makeup", value: "beauty" },
+    { name: "HealthCare", value: "health" },
+  ];
+
   return (
-    <>
-      <div class="container">
-        <header class="d-flex justify-content-center py-3">
-          <ul class="nav nav-pills">
-            <li class="nav-item">
-              <a href="#" class="nav-link active" aria-current="page">
-                Women
+    <div className="container">
+      <header className="d-flex justify-content-center py-3">
+        <ul className="nav nav-pills">
+          {categories.map((item,index) => (
+            <li key={item.value} className="nav-item">
+              <a
+                href="#"
+                className={'nav-link'}
+              >
+                {item.name}
               </a>
             </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Men
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Kids
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Beauty & Health
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                Home & Kitchen
-              </a>
-            </li>
-          </ul>
-        </header>
-      </div>
-    </>
+          ))}
+        </ul>
+      </header>
+    </div>
   );
 };
+
 export default Itemsbar;

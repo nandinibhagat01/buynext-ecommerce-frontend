@@ -4,6 +4,7 @@ import FashionCards from "../components/Body/FashionCards";
 import Footer from "../components/Footer/Footer";
 import CarouselCard from "../components/Body/CarouselCard";
 import Itemsbar from "../components/Header/Itemsbar";
+import { Routes, Route } from "react-router-dom";
 
 const Home = () => {
   return (
