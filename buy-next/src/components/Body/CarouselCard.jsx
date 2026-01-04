@@ -1,6 +1,3 @@
-import kidImg1 from "../../images/Kids/kid_img2.jpeg";
-import kidImg2 from "../../images/Kids/kid_img3.jpeg";
-import kidImg3 from "../../images/Kids/kid_img4.jpeg";
 import "./CarouselCard.css";
 
 const CarouselCard = () => {
@@ -22,38 +19,47 @@ const CarouselCard = () => {
       {/* Slides */}
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={kidImg1} className="d-block w-100" alt="Slide 1" />
+          <img
+            src="/images/Kids/kid_img1.jpeg"
+            className="d-block w-100"
+            alt="Slide 1"
+          />
         </div>
 
         <div className="carousel-item">
-          <img src={kidImg2} className="d-block w-100" alt="Slide 2" />
+          <img
+            src="/images/Kids/kid_img6.jpeg"
+            className="d-block w-100"
+            alt="Slide 2"
+          />
         </div>
 
         <div className="carousel-item">
-          <img src={kidImg3} className="d-block w-100" alt="Slide 3" />
+          <img
+            src="/images/Kids/kid_img5.jpeg"
+            className="d-block w-100"
+            alt="Slide 3"
+          />
         </div>
       </div>
 
-      {/* Left Arrow */}
+      {/* Controls */}
       <button
         className="carousel-control-prev"
         type="button"
         data-bs-target="#myCarousel"
         data-bs-slide="prev"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
+        <span className="carousel-control-prev-icon"></span>
       </button>
 
-      {/* Right Arrow */}
       <button
         className="carousel-control-next"
         type="button"
         data-bs-target="#myCarousel"
         data-bs-slide="next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
+        <span className="carousel-control-next-icon"></span>
       </button>
     </div>
   );

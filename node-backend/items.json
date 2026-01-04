@@ -1,3 +1,24 @@
 {
-  "items": []
+  "items": [
+    [
+      {
+        "id": 1,
+        "name": "Kids T-Shirt",
+        "price": 499,
+        "image": "/images/Kids/kid_img2.jpeg"
+      },
+      {
+        "id": 2,
+        "name": "Kids Jacket",
+        "price": 899,
+        "image": "/images/Kids/kid_img3.jpeg"
+      },
+      {
+        "id": 3,
+        "name": "Kids Jeans",
+        "price": 699,
+        "image": "/images/Kids/kid_img4.jpeg"
+      }
+    ]
+  ]
 }

@@ -1,12 +1,12 @@
 const Itemsbar = () => {
   const categories = [
-    { name: "Women", value: "women" },
-    { name: "Men", value: "men" },
-    { name: "Kids", value: "kids" },
-    { name: "Home Accessories", value: "home" },
-    { name: "Kitchen Items", value: "kitchen" },
-    { name: "Beauty & Makeup", value: "beauty" },
-    { name: "HealthCare", value: "health" },
+    { name: "Women"},
+    { name: "Men"},
+    { name: "Kids"},
+    { name: "Home Accessories"},
+    { name: "Kitchen Items"},
+    { name: "Beauty & Makeup"},
+    { name: "HealthCare" },
   ];
 
   return (
@@ -14,7 +14,7 @@ const Itemsbar = () => {
       <header className="d-flex justify-content-center py-3">
         <ul className="nav nav-pills">
           {categories.map((item,index) => (
-            <li key={item.value} className="nav-item">
+            <li key={index} className="nav-item">
               <a
                 href="#"
                 className={'nav-link'}

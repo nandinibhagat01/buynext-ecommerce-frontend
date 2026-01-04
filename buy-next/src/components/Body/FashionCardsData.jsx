@@ -1,25 +1,21 @@
-import FashionImg1 from "../../images/Women/women_img1.jpeg";
-import FashionImg2 from "../../images/Women/women_img2.jpeg";
-import FashionImg3 from "../../images/Women/women_img3.jpeg";
-
 const FashionCardsData=[
   {
     id: 1,
     headline: "Going Out",
     para: "Big % Discount on Girls Collection",
-    image: FashionImg1
+    image: "/images/Men/men_img2.jpeg"
   },
   {
     id:2,
     headline: "Functional & Stylish",
     para: "Cook with Confidence, Serve and Style",
-    image: FashionImg2
+    image: "/images/Men/men_img5.jpeg"
   },
   {
     id: 3,
     headline: "Smart Living",
     para: "Explore Best Furnitures",
-    image: FashionImg3
+    image: "/images/Men/men_img.jpeg"
   },
 ]
 

@@ -2,6 +2,7 @@ import "./Navbar.css";
 import NavItem from "./NavItem";
 import { IoSearch } from "react-icons/io5";
 import NavItems from "./NavItems";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -12,15 +13,18 @@ const Navbar = () => {
       >
         <div className="container-fluid">
           <div className="d-flex flex-wrap align-items-center justify-content-between">
-            <img src="src/images/logo.png" alt="logo" height="30" />
-
+            <Link to="/">
+              <img src="/images/logo.png" alt="logo" height="30" />
+            </Link>
             <ul className="nav col-12 col-lg-auto my-2 ms-auto justify-content-center my-md-0 text-small">
               {NavItems.map((item, index) => (
                 <NavItem
                   key={index}
                   icon={item.icon}
                   label={item.label}
+                  path={item.path}
                   className={item.className}
+                  showBadge={item.showBadge}
                 />
               ))}
             </ul>
@@ -65,3 +69,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+/*<Link to="/Cart"  className="navIcons d-block mx-auto mb-1 text-dark" size={20} >
+              <div ><BsCart3/>
+              </div></Link> */
