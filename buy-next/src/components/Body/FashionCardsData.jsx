@@ -15,7 +15,7 @@ const FashionCardsData=[
     id: 3,
     headline: "Smart Living",
     para: "Explore Best Furnitures",
-    image: "/images/Men/men_img.jpeg"
+    image: "/images/Men/men_img8.jpeg"
   },
 ]
 

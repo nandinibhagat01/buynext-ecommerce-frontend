@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
 import ProductCard from "./ProductCard";
 
-
-
 const ProductCards = () => {
 
   const items = useSelector((store) => store.items);

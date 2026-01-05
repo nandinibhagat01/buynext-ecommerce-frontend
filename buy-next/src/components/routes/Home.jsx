@@ -1,14 +1,15 @@
 import ProductCards from "../Body/ProductCards";
 import FashionCards from "../Body/FashionCards";
 import CarouselCard from "../Body/CarouselCard";
-//import Itemsbar from "../Header/Itemsbar";
+import Itemsbar from "../Header/Itemsbar";
 
 const Home = () => {
   return (
     <>
       <main>
-        {/* <Itemsbar /> */}
-
+        <main>
+          <Itemsbar />
+        </main>
         <CarouselCard />
         <div className="container py-5">
           <ProductCards />

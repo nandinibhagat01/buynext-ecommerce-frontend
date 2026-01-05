@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const PCardSlice= createSlice({
-  name: "ProductCards",
+  name: "items",
   initialState: [],
   reducers:{
     addInitialProducts:(state, action)=>{

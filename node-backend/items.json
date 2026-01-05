@@ -18,6 +18,18 @@
         "name": "Kids Jeans",
         "price": 699,
         "image": "/images/Kids/kid_img4.jpeg"
+      },
+      {
+        "id": 4,
+        "name": "Kids Pant",
+        "price": 699,
+        "image": "/images/Kids/kid_img5.jpeg"
+      },
+      {
+        "id": 5,
+        "name": "Kids Shirt",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg"
       }
     ]
   ]

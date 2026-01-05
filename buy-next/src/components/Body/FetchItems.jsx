@@ -1,38 +1,36 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PCardActions } from "../store/PCardSlice";
+import { FetchStatusActions } from "../store/FetchStatusSlice";
 
 const FetchItems = () => {
-  const fetchStatus = useSelector((store) => store.fetchStatus);
-
+  const fetchDone = useSelector((store) => store.fetchStatus.fetchDone);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (fetchStatus?.fetchDone) return;
+    if (fetchDone) return;
 
     const controller = new AbortController();
-    const signal = controller.signal;
-    //setFetching(true);
-    //fetch("https://localhost:8080/items")
-    fetch("/items.json", { signal })
+
+    dispatch(FetchStatusActions.markFetchingStarted());
+
+    fetch("http://localhost:8080/items", { signal: controller.signal })
       .then((res) => res.json())
-      .then(({items}) => {
+      .then(({ items }) => {
         dispatch(PCardActions.addInitialProducts(items[0]));
-
-      //   .catch((err) => {
-      //   if (err.name !== "AbortError") console.error(err);
-      // });
-        
+        dispatch(FetchStatusActions.markFetchDone());
+      })
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          console.error(err);
+          dispatch(FetchStatusActions.markFetchingFinished());
+        }
       });
-    return () => {
-      controller.abort();
-    };
-  }, [fetchStatus]);
 
-  return (
-    <>
-      <div></div>
-    </>
-  );
+    return () => controller.abort();
+  }, [fetchDone, dispatch]);
+
+  return null;
 };
+
 export default FetchItems;

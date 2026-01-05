@@ -3,9 +3,9 @@ const LoadingSpinner = () => {
     <>
       <div className="d-flex justify-content-center">
         <div
-          className="spinner-border"
+          className="spinner-border text-primary"
           role="status"
-          style={{ width: "5rem", height: "5rem" }}
+          style={{ width: "5rem", height: "5rem", margin:"300px"}}
         >
           <span className="visually-hidden">Loading...</span>
         </div>
