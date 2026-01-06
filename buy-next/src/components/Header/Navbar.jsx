@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <header className="sticky-top">
-      <div className="px-3 py-2 text-bg-warning border-bottom" style={{height:"70px"}}>
-        <div className="container-fluid h-100">
+      <div className="px-3 py-2 text-bg-warning border-bottom " style={{height:"70px"}} >
+        <div className="container-fluid h-100 ">
           <div className="d-flex align-items-center h-100">
             <Link to="/">
               <img src="/images/logo.png" alt="logo" height="30" />

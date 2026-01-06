@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import {useSelector } from "react-redux"
 
 const NavItem = ({ icon: Icon, label, className, path, showBadge }) => {
+
+  const cart = useSelector((store)=>store.cart);
   return (
     <li>
       <Link to={path} className={`${className} position-relative`}>
@@ -14,7 +17,7 @@ const NavItem = ({ icon: Icon, label, className, path, showBadge }) => {
               fontSize: "10px",
             }}
           >
-            3
+            {cart.length}
           </span>
         )}
         {label}

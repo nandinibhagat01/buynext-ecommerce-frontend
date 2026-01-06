@@ -1,8 +1,14 @@
 import CardButtons from "./CartButtons";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { MdOutlineLibraryAdd } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { CartActions } from "../store/CartSlice";
 
-const CartCard = () => {
+
+const CartCard = ({item}) => {
+  
+ const dispatch = useDispatch();
+
   return (
     <div style={{margin:"10px"}}>
     <div className="container">
@@ -11,7 +17,7 @@ const CartCard = () => {
           {/* Image */}
           <div className="col-md-2 text-center">
             <img
-              src="/images/Men/men_img1.jpeg"
+              src={item.image}
               className="img-fluid rounded-start"
               alt="Product"
             />
@@ -20,20 +26,20 @@ const CartCard = () => {
           {/* Product Details */}
           <div className="col-md-7">
             <div className="card-body">
-              <h5 className="card-title">Card title</h5>
+              <h5 className="card-title">{item.name}</h5>
               <p className="card-text">Product Description</p>
-              <big className="fw-bold">₹999</big>
+              <big className="fw-bold">₹{item.price}</big>
               <p className="card-text mb-1">
                 <small className="text-body-secondary">Free Delivery</small>
               </p>
               <p className="text-success mb-0">In Stock</p>
               <div className="btn-group">
-                <button className="btn btn-outline-danger rounded-start-5" type="button">
+                <button className="btn btn-outline-danger rounded-start-5" type="button"  onClick={() => dispatch(CartActions.removeFromCart(item.id))}>
                   <RiDeleteBinLine />
                 </button>
 
                 <button className="btn border-secondary border-end-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover" type="button">
-                  2
+                  1
                 </button>
                 <button className="btn btn-outline-success rounded-end-5" type="button">
                   <MdOutlineLibraryAdd />
