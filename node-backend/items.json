@@ -4,32 +4,146 @@
       {
         "id": 1,
         "name": "Kids T-Shirt",
+        "company": "James",
         "price": 499,
-        "image": "/images/Kids/kid_img2.jpeg"
+        "image": "/images/Kids/kid_img2.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
       },
       {
         "id": 2,
         "name": "Kids Jacket",
+        "company": "James",
         "price": 899,
-        "image": "/images/Kids/kid_img3.jpeg"
+        "image": "/images/Kids/kid_img3.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
       },
       {
         "id": 3,
         "name": "Kids Jeans",
+        "company": "James",
         "price": 699,
-        "image": "/images/Kids/kid_img4.jpeg"
+        "image": "/images/Kids/kid_img4.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
       },
       {
         "id": 4,
         "name": "Kids Pant",
+        "company": "James",
         "price": 699,
-        "image": "/images/Kids/kid_img5.jpeg"
+        "image": "/images/Kids/kid_img5.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
+      },
+      {
+        "id": 6,
+        "name": "Kids Shirt",
+        "company": "James",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
+      },
+      {
+        "id": 7,
+        "name": "Kids Shirt",
+        "company": "James",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
+      },
+      {
+        "id": 8,
+        "name": "Kids Shirt",
+        "company": "James",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
+      },
+      {
+        "id": 9,
+        "name": "Kids Shirt",
+        "company": "James",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
       },
       {
         "id": 5,
         "name": "Kids Shirt",
+        "company": "James",
         "price": 699,
-        "image": "/images/Kids/kid_img6.jpeg"
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
+      },
+      {
+        "id": 5,
+        "name": "Kids Shirt",
+        "company": "James",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
+      },
+      {
+        "id": 5,
+        "name": "Kids Shirt",
+        "company": "James",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
+      },
+      {
+        "id": 5,
+        "name": "Kids Shirt",
+        "company": "James",
+        "price": 699,
+        "image": "/images/Kids/kid_img6.jpeg",
+        "original_price": "699",
+        "discount": 42,
+        "return_period": 14,
+        "delivery_date": "10 Oct 2023",
+        "rating": { "stars": 4.5, "count": 1400 }
       }
     ]
   ]
