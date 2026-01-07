@@ -6,11 +6,11 @@ const NavItem = ({ icon: Icon, label, className, path, showBadge }) => {
   const cart = useSelector((store)=>store.cart);
   return (
     <li>
-      <Link to={path} className={`${className} position-relative`}>
+      <Link to={path} className={`${className} position-relative text-white nav-item-link`}>
         <Icon className="navIcons d-block mx-auto mb-1" size={25} />
         {showBadge && (
           <span
-            className="position-absolute badge rounded-pill bg-danger"
+            className="position-absolute badge rounded-pill bg-yellow-400 text-dark"
             style={{
               top: "-3px",
               right: "12px",

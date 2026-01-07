@@ -9,6 +9,8 @@ import Home from "./components/routes/Home.jsx";
 import { Provider } from "react-redux";
 import buynextStore from "./components/store/index.js";
 import Cart from "./components/routes/Cart.jsx";
+import "./styles/custom-bootstrap.scss";
+
 
 const router = createBrowserRouter([
   {
