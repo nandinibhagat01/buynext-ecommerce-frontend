@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 import buynextStore from "./components/store/index.js";
 import Cart from "./components/routes/Cart.jsx";
 import "./styles/custom-bootstrap.scss";
-
+import CategoryProducts from "./components/Body/CategoryProducts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +25,7 @@ const router = createBrowserRouter([
         path: "/Cart",
         element: <Cart />,
       },
+      { path: "/:category", element: <CategoryProducts /> },
     ],
   },
 ]);

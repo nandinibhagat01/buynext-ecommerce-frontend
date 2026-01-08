@@ -13,9 +13,9 @@ const FashionCard = ({ fashionItem }) => {
           className="shadow-sm mx-auto d-block"
           style={{
             width: "80%",
-            height: "350px",
+            height: "450px",
             objectFit: "cover",
-            borderRadius: "25px 25px 0 0",
+            borderRadius: "45px 45px 0 0",
           }}
         />
       </div>

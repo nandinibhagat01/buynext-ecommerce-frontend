@@ -32,7 +32,3 @@ const Cart = () => {
   );
 };
 export default Cart;
-
-/*  const finalItems = items.filter(item =>
-    cartItems.includes(item.id)
-  ); */

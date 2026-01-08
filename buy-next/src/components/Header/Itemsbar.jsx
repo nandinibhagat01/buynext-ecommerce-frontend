@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
+
 const Itemsbar = () => {
   const categories = [
-    { name: "Women" },
-    { name: "Men" },
-    { name: "Kids" },
-    { name: "Home Accessories" },
-    { name: "Kitchen Items" },
-    { name: "Beauty & Makeup" },
-    { name: "HealthCare" },
+    { name: "Women", path:"/Women" },
+    { name: "Men", path: "/men" },
+    { name: "Kids", path: "/kids" },
+    { name: "Home Accessories", path: "/home-accessories" },
+    { name: "Kitchen Items", path: "/kitchen-items" },
+    { name: "Beauty & Makeup", path: "/beauty-makeup" },
+    { name: "HealthCare", path: "/healthcare" },
+    { name: "Stationary", path: "/stationary" },
+    { name: "Electronics", path: "/electronics" },
   ];
 
   return (
@@ -15,9 +19,9 @@ const Itemsbar = () => {
         <ul className="nav">
           {categories.map((item, index) => (
             <li key={index} className="nav nav-item itemsbar-link itemsbar-items ">
-              <a href="#" className={"nav-link"}>
+              <Link to={item.path} className={"nav-link"}>
                 {item.name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

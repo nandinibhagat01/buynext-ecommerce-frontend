@@ -3,19 +3,19 @@ const FashionCardsData=[
     id: 1,
     headline: "Going Out",
     para: "Big % Discount on Girls Collection",
-    image: "/images/Men/men_img2.jpeg"
+    image: "Fashion/f1.png"
   },
   {
     id:2,
     headline: "Functional & Stylish",
     para: "Cook with Confidence, Serve and Style",
-    image: "/images/Men/men_img5.jpeg"
+    image: "Fashion/f3.jpg"
   },
   {
     id: 3,
     headline: "Smart Living",
     para: "Explore Best Furnitures",
-    image: "/images/Men/men_img8.jpeg"
+    image: "Fashion/f2.webp"
   },
 ]
 

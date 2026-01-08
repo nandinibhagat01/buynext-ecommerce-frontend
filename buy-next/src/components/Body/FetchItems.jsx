@@ -17,7 +17,7 @@ const FetchItems = () => {
     fetch("http://localhost:8080/items", { signal: controller.signal })
       .then((res) => res.json())
       .then(({ items }) => {
-        dispatch(PCardActions.addInitialProducts(items[0]));
+        dispatch(PCardActions.addInitialProducts(items));
         dispatch(FetchStatusActions.markFetchDone());
       })
       .catch((err) => {

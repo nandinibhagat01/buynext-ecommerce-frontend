@@ -11,7 +11,11 @@ const CarouselCard = () => {
     >
       {/* Indicators */}
       <div className="carousel-indicators">
-        <button data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" />
+        <button
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          className="active"
+        />
         <button data-bs-target="#myCarousel" data-bs-slide-to="1" />
         <button data-bs-target="#myCarousel" data-bs-slide-to="2" />
       </div>
@@ -19,16 +23,12 @@ const CarouselCard = () => {
       {/* Slides */}
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img
-            src="/images/Kids/kid_img1.jpeg"
-            className="d-block w-100"
-            alt="Slide 1"
-          />
+          <img src="/Carousel/1.jpeg" className="d-block w-100" alt="Slide 1" />
         </div>
 
         <div className="carousel-item">
           <img
-            src="/images/Kids/kid_img6.jpeg"
+            src="/Carousel/2.jpeg"
             className="d-block w-100"
             alt="Slide 2"
           />
@@ -36,7 +36,7 @@ const CarouselCard = () => {
 
         <div className="carousel-item">
           <img
-            src="/images/Kids/kid_img5.jpeg"
+            src="/Carousel/3.jpg"
             className="d-block w-100"
             alt="Slide 3"
           />

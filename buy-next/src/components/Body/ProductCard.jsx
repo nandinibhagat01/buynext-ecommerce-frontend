@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
           src={product.image}
           className="card-img-top"
           alt={product.name}
-          style={{ height: "450px", objectFit: "cover" }}
+          style={{ height: "400px", objectFit: "cover" }}
         />
         <div className="card-body d-flex flex-column">
           <p>{product.company}</p>
