@@ -1,11 +1,20 @@
 import CardButtons from "./CartButtons";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { MdOutlineLibraryAdd } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CartOperatorsActions } from "../store/CartOperatorsSlice";
 import { CartActions } from "../store/CartSlice";
 
 const CartCard = ({ item }) => {
   const dispatch = useDispatch();
+
+  const { qty } = useSelector((store) => store.cartOperators);
+  const handleIncrement = () => {
+    dispatch(CartOperatorsActions.increment());
+  };
+  const handleDecrement = () => {
+    dispatch(CartOperatorsActions.decrement());
+  };
 
   return (
     <div style={{ margin: "10px" }}>
@@ -43,8 +52,11 @@ const CartCard = ({ item }) => {
                 <p className="text-success mb-0">In Stock</p>
                 <div className="btn-group">
                   <button
-                    className="btn btn-outline-danger rounded-start-5"
-                    type="button"
+                    className={`btn btn-outline-danger rounded-start-5 ${
+                      qty === 1 ? "disabled opacity-50" : ""
+                    }`}
+                    disabled={item.qty === 1}
+                    onClick={handleDecrement}
                   >
                     <RiDeleteBinLine />
                   </button>
@@ -57,11 +69,12 @@ const CartCard = ({ item }) => {
                     data-bs-content="Top popover"
                     type="button"
                   >
-                    1
+                    {qty}
                   </button>
                   <button
                     className="btn btn-outline-success rounded-end-5"
                     type="button"
+                    onClick={handleIncrement}
                   >
                     <MdOutlineLibraryAdd />
                   </button>
