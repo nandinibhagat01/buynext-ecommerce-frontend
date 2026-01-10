@@ -1,16 +1,21 @@
 import { useSelector } from "react-redux";
 import CartCard from "../Cart/CartCard";
 import OrderSummary from "../Cart/OrderSummary";
+import EmptyCart from "../Cart/EmptyCart";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
+
   const items = useSelector((state) => state.items);
+if (cartItems.length ===0){
+  return <EmptyCart/>
+}
   const finalItems = items.filter((item) => {
     const itemIndex = cartItems.indexOf(item.id);
     return itemIndex >= 0;
   });
   return (
-    <>
+    <> 
       <div className="container py-4">
         <div className="row">
           {/* LEFT*/}

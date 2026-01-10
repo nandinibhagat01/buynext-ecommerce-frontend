@@ -4,16 +4,50 @@ import { MdOutlineLibraryAdd } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { CartOperatorsActions } from "../store/CartOperatorsSlice";
 import { CartActions } from "../store/CartSlice";
+import { useEffect, useRef } from "react";
+import { Popover } from "bootstrap";
 
 const CartCard = ({ item }) => {
   const dispatch = useDispatch();
 
-  const { qty } = useSelector((store) => store.cartOperators);
+  const qty = useSelector(
+    (store) => store.cartOperators.quantities[item.id] || 1
+  );
+
+  useEffect(() => {
+    dispatch(CartOperatorsActions.initializeQty(item.id));
+  }, [dispatch, item.id]);
+
   const handleIncrement = () => {
-    dispatch(CartOperatorsActions.increment());
+    dispatch(CartOperatorsActions.increment(item.id));
   };
   const handleDecrement = () => {
-    dispatch(CartOperatorsActions.decrement());
+    dispatch(CartOperatorsActions.decrement(item.id));
+  };
+
+  const popoverRef = useRef(null);
+  let popoverInstance = useRef(null);
+
+  useEffect(() => {
+    if (popoverRef.current) {
+      popoverInstance.current = new Popover(popoverRef.current, {
+        trigger: "manual",
+        placement: "top",
+        content: "Number of items",
+      });
+    }
+
+    return () => {
+      popoverInstance.current?.dispose();
+    };
+  }, []);
+
+  const showPopover = () => {
+    popoverInstance.current?.show();
+  };
+
+  const hidePopover = () => {
+    popoverInstance.current?.hide();
   };
 
   return (
@@ -52,22 +86,19 @@ const CartCard = ({ item }) => {
                 <p className="text-success mb-0">In Stock</p>
                 <div className="btn-group">
                   <button
-                    className={`btn btn-outline-danger rounded-start-5 ${
-                      qty === 1 ? "disabled opacity-50" : ""
-                    }`}
-                    disabled={item.qty === 1}
+                    className="btn btn-outline-danger rounded-start-5"
                     onClick={handleDecrement}
+                    disabled={qty === 1}
                   >
                     <RiDeleteBinLine />
                   </button>
 
                   <button
+                    ref={popoverRef}
                     className="btn border-secondary border-end-0"
-                    data-bs-container="body"
-                    data-bs-toggle="popover"
-                    data-bs-placement="top"
-                    data-bs-content="Top popover"
                     type="button"
+                    onClick={showPopover}
+                    onMouseLeave={hidePopover}
                   >
                     {qty}
                   </button>
@@ -85,7 +116,7 @@ const CartCard = ({ item }) => {
             {/* Buttons */}
             <CardButtons></CardButtons>
             <button
-              className="btn btn-outline-danger rounded-pill"
+              className="btn btn-outline-danger rounded-pill bg-pink-100 text-red-600 cart-btn"
               type="button"
               onClick={() => dispatch(CartActions.removeFromCart(item.id))}
             >
@@ -99,14 +130,3 @@ const CartCard = ({ item }) => {
 };
 
 export default CartCard;
-
-<button
-  type="button"
-  class="btn btn-secondary"
-  data-bs-container="body"
-  data-bs-toggle="popover"
-  data-bs-placement="top"
-  data-bs-content="Top popover"
->
-  Popover on top
-</button>;
