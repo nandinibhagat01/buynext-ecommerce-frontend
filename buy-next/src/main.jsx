@@ -11,6 +11,7 @@ import buynextStore from "./components/store/index.js";
 import Cart from "./components/routes/Cart.jsx";
 import "./styles/custom-bootstrap.scss";
 import CategoryProducts from "./components/Body/CategoryProducts.jsx";
+import Profile from "./components/routes/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       { path: "/:category", element: <CategoryProducts /> },
+      {
+        path: "/Profile",
+        element: <Profile />,
+      },
     ],
   },
 ]);

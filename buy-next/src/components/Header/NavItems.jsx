@@ -33,7 +33,7 @@ const NavItems = [
   {
     label: "Profile",
     icon: CgProfile,
-    path: "/profile",
+    path: "/Profile",
     className: "nav-link text-dark",
   },
 ];

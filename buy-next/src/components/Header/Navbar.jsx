@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="container-fluid h-100 ">
           <div className="d-flex align-items-center h-100">
             <Link to="/" className="nav-item-link">
-              <img src="/images/logo.png" alt="logo" height="30" />
+              <img src="logo1.jpeg" alt="logo" height="60" style={{borderRadius:"50px", border:"2px solid purple"}}/>
             </Link>
             <form className="mx-auto navbar-search" role="search">
               <div className="input-group ">
