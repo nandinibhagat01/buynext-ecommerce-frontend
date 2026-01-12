@@ -1,71 +1,49 @@
-import { getUser } from "../../utils/auth";
+import { getUser, logout } from "../../utils/auth";
+import Account from "../Profile/Account";
+import Activities from "../Profile/Activities";
+import FeedBack from "../Profile/Feedback";
 import SignIn from "../Profile/SignIn";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const user = getUser();
+  const navigate = useNavigate();
 
   if (!user) {
     return <SignIn />;
   }
+  const handleLogout = () => {
+    logout(); // remove user from localStorage
+    navigate("/"); // redirect to home
+  };
 
   return (
-    <div className="container py-5">
-      <h2>My Profile</h2>
+    <>
+      <div className="container py-5">
+        <h2>My Profile</h2>
 
-      <p><strong>Name:</strong> {user.name}</p>
-      <p><strong>Email:</strong> {user.email}</p>
-      <p><strong>Joined:</strong> {user.joined}</p>
-
-      <hr />
-
-      <h4>Previous Orders</h4>
-      {user.orders.length === 0 ? (
-        <p>No orders yet</p>
-      ) : (
-        <ul>
-          {user.orders.map(order => (
-            <li key={order.id}>{order.item}</li>
-          ))}
-        </ul>
-      )}
-    </div>
+        <p>
+          <strong>Name:</strong> {user.firstName} {user.lastName}
+        </p>
+        <p>
+          <strong>Email:</strong> {user.email}
+        </p>
+        <p>
+          <strong>Joined:</strong> {user.joined}
+        </p>
+        <hr />
+        <Activities />
+        <hr />
+        <Account />
+        <hr />
+        <FeedBack />
+        <hr />
+        <button className="btn btn-danger mt-4 w-100" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
+    </>
   );
 };
 
 export default Profile;
-
-//   return (
-//     <div className="container py-5">
-//       <h2>My Profile</h2>
-
-//       <p><strong>Name:</strong> {user.name}</p>
-//       <p><strong>Email:</strong> {user.email}</p>
-//       <p><strong>Joined:</strong> {user.joined}</p>
-
-//       <hr />
-
-//       <h4>Previous Orders</h4>
-//       {user.orders.length === 0 ? (
-//         <p>No orders yet</p>
-//       ) : (
-//         <ul>
-//           {user.orders.map(order => (
-//             <li key={order.id}>{order.item}</li>
-//           ))}
-//         </ul>
-//       )}
-
-//       <button
-//         className="btn btn-danger mt-4"
-//         onClick={() => {
-//           logout();
-//           navigate("/");
-//         }}
-//       >
-//         Logout
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Profile;

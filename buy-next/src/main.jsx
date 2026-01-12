@@ -12,6 +12,7 @@ import Cart from "./components/routes/Cart.jsx";
 import "./styles/custom-bootstrap.scss";
 import CategoryProducts from "./components/Body/CategoryProducts.jsx";
 import Profile from "./components/routes/Profile.jsx";
+import EditProfile from "./components/Profile/EditProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/Profile",
         element: <Profile />,
+      },
+      {
+        path: "/EditProfile",
+        element: <EditProfile />,
       },
     ],
   },

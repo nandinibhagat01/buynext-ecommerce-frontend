@@ -1,13 +1,15 @@
 import { login } from "../../utils/auth";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const email = event.target.email.value;
 
-    login(email, password);
-    window.location.reload(); // store user
+    login(email);
+    navigate("/Profile");
   };
   return (
     <>
