@@ -1,4 +1,8 @@
-const EditProfileDropdowns = ({ formData, setFormData }) => {
+import { useDispatch } from "react-redux";
+import { ProfileActions } from "../store/ProfileSlice";
+
+const EditProfileDropdowns = ({ profile }) => {
+  const dispatch = useDispatch();
   const occupation_options = [
     "Housewife",
     "Teacher",
@@ -9,22 +13,19 @@ const EditProfileDropdowns = ({ formData, setFormData }) => {
   ];
 
   const handleSelect = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    dispatch(ProfileActions.setProfile({ [e.target.name]: e.target.value }));
   };
-
+  
   return (
     <>
       <div className="col-12">
-        <label for="state" class="form-label">
+        <label htmlFor="state" className="form-label">
           Gender
         </label>
         <select
           name="gender"
           className="form-select"
-          value={formData.gender}
+          value={profile.gender}
           onChange={handleSelect}
         >
           <option value="">Select</option>
@@ -34,13 +35,13 @@ const EditProfileDropdowns = ({ formData, setFormData }) => {
         </select>
       </div>
       <div className="col-12">
-        <label for="state" class="form-label">
+        <label htmlFor="state" className="form-label">
           Languages Spoken
         </label>
         <select
           name="language"
           className="form-select"
-          value={formData.language}
+          value={profile.language}
           onChange={handleSelect}
         >
           <option value="">Select</option>
@@ -51,13 +52,13 @@ const EditProfileDropdowns = ({ formData, setFormData }) => {
         </select>
       </div>
       <div className="col-12">
-        <label for="state" class="form-label">
+        <label htmlFor="state" className="form-label">
           Occupation
         </label>
         <select
           name="occupation"
           className="form-select"
-          value={formData.occupation}
+          value={profile.occupation}
           onChange={handleSelect}
         >
           {occupation_options.map((option, index) => (
@@ -71,32 +72,3 @@ const EditProfileDropdowns = ({ formData, setFormData }) => {
   );
 };
 export default EditProfileDropdowns;
-
-
-// export const states = [
-//   "Andhra Pradesh",
-//   "Arunachal Pradesh",
-//   "Assam",
-//   "Bihar",
-//   "Delhi",
-//   "Gujarat",
-//   "Karnataka",
-//   "Maharashtra",
-//   "Tamil Nadu",
-//   "Telangana",
-//   "Uttar Pradesh",
-//   "West Bengal",
-// ];
-// import { states } from "./states";
-
-// <select
-//   name="state"
-//   className="form-select"
-//   value={formData.state}
-//   onChange={handleSelect}
-// >
-//   <option value="">Select State</option>
-//   {states.map((state) => (
-//     <option key={state}>{state}</option>
-//   ))}
-// </select>

@@ -1,14 +1,28 @@
-import { login } from "../../utils/auth";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { AuthActions } from "../store/AuthSlice";
+import { ProfileActions } from "../store/ProfileSlice";
+
+const capitalize = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+};
 
 const SignIn = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
 
-    const email = event.target.email.value;
+    dispatch(AuthActions.login({ email }));
 
-    login(email);
+    dispatch(
+      ProfileActions.setProfile({
+        firstName: capitalize(email.split("@")[0]),
+        email,
+      })
+    );
+
     navigate("/Profile");
   };
   return (

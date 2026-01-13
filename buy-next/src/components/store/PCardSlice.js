@@ -9,7 +9,6 @@ const PCardSlice= createSlice({
     }
   }
 
-
 })
 export const PCardActions=PCardSlice.actions;
 
