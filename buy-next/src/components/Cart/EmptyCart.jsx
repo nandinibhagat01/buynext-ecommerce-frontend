@@ -9,7 +9,7 @@ const EmptyCart = () => {
         className="px-4 pt-5 my-5 text-center border-bottom"
         style={{ height: "650px" }}
       >
-        <h1 className="display-4 fw-bold text-body-emphasis">
+        <h1 className="display-4 fw-bold text-body-emphasis text-purple-700">
           Your Cart is Empty
         </h1>
         <div className="col-lg-6 mx-auto">
@@ -17,7 +17,7 @@ const EmptyCart = () => {
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
             <button
               type="button"
-              className="btn btn-primary btn-lg px-4 me-sm-3"
+              className="btn btn-lg px-4 me-sm-3 text-white bg-purple-400"
               fdprocessedid="qtrgoi"
               onClick={() => {
                 navigate("/");
@@ -27,10 +27,11 @@ const EmptyCart = () => {
             </button>
             <button
               type="button"
-              className="btn btn-outline-secondary btn-lg px-4"
+              className="btn text-white btn-lg px-4 bg-pink-400"
               fdprocessedid="fqnlnn"
+              onClick={()=>navigate("/Profile")}
             >
-              Sign in
+              Visit Profile
             </button>
           </div>
         </div>

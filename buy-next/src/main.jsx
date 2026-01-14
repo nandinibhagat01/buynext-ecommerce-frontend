@@ -7,12 +7,13 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/routes/Home.jsx";
 import { Provider } from "react-redux";
-import buynextStore from "./components/store/index.js";
 import Cart from "./components/routes/Cart.jsx";
 import "./styles/custom-bootstrap.scss";
 import CategoryProducts from "./components/Body/CategoryProducts.jsx";
 import Profile from "./components/routes/Profile.jsx";
 import EditProfile from "./components/Profile/EditProfile.jsx";
+import { store, persistor } from "./components/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 const router = createBrowserRouter([
   {
@@ -42,8 +43,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Provider store={buynextStore}>
-      <RouterProvider router={router} />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
     </Provider>
   </StrictMode>
 );

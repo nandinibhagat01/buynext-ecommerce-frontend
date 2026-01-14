@@ -10,7 +10,7 @@ const Activities = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/order.png"
             alt=""
             width="32"
             height="32"
@@ -31,7 +31,7 @@ const Activities = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/wishlist.png"
             alt=""
             width="32"
             height="32"
@@ -50,7 +50,7 @@ const Activities = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/review.png"
             alt=""
             width="32"
             height="32"

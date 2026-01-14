@@ -43,7 +43,8 @@ const SignIn = () => {
                 data-bs-dismiss="modal"
                 aria-label="Close"
                 fdprocessedid="726h0f"
-              ></button>
+                onClick={()=>navigate("/")}
+              />
             </div>
             <div className="modal-body p-5 pt-0">
               <form onSubmit={handleSubmit}>

@@ -9,7 +9,7 @@ const initialState = {
   address: "",
   address_opt: "",
   gender: "",
-  language: "",
+  language: [],
   occupation: "",
   city: "",
   state: "",

@@ -6,6 +6,7 @@ import SignIn from "../Profile/SignIn";
 import { useNavigate } from "react-router-dom";
 import { AuthActions } from "../store/AuthSlice";
 import { ProfileActions } from "../store/ProfileSlice";
+import { VscAccount } from "react-icons/vsc";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -25,27 +26,42 @@ const Profile = () => {
   return (
     <>
       <div className="container py-5">
-        <h2>My Profile</h2>
-        {profile.avatar && (
-          <img
-            src={profile.avatar}
-            alt="Profile"
-            className="rounded-circle mb-3"
-            width="100"
-            height="100"
-          />
-        )}
+        <div className="border p-5 shadow-lg">
+          <div className="d-flex justify-content-between align-self-end">
+            <div>
+              {profile.avatar ? (
+                <img
+                  src={profile.avatar}
+                  alt="Profile"
+                  className="rounded-circle mb-3 m-3"
+                  width="100"
+                  height="100"
+                />
+              ) : (
+                <VscAccount
+                  className=" text-purple-500"
+                  style={{ fontSize: "100px" }}
+                />
+              )}
+              <strong
+                className="p-2"
+                style={{ fontSize: "30px", fontFamily: "serif" }}
+              >
+                {profile.firstName} {profile.lastName}
+              </strong>
+            </div>
+            <img src="logo1.jpeg" alt="" style={{ width: "200px" }} />
+          </div>
 
-        <p>
-          <strong>Name:</strong> {profile.firstName} {profile.lastName}
-        </p>
-        <p>
-          <strong>Email:</strong> {auth.email}
-        </p>
-        <p>
-          <strong>Joined:</strong> {auth.joined}
-        </p>
-        <hr />
+          <p
+            className="text-end text-pink-600"
+            style={{ fontFamily: "fantasy" }}
+          >
+            Joined: {auth.joined}
+          </p>
+        </div>
+        <br />
+        <br />
         <Activities />
         <hr />
         <Account />

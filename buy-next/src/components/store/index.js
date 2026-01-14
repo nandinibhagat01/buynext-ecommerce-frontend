@@ -1,4 +1,6 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 import PCardSlice from "./PCardSlice";
 import FetchStatusSlice from "./FetchStatusSlice";
 import CartSlice from "./CartSlice";
@@ -7,21 +9,31 @@ import OTPSlice from "./OTPSlice";
 import ProfileSlice from "./ProfileSlice";
 import AuthSlice from "./AuthSlice";
 
-const buynextStore = configureStore({
-  reducer: {
-    items: PCardSlice.reducer,
-    fetchStatus: FetchStatusSlice.reducer,
-    cart: CartSlice.reducer,
-    auth: AuthSlice.reducer,
-    cartOperators: CartOperatorsSlice.reducer,
-    otp: OTPSlice.reducer,
-    profile: ProfileSlice.reducer,
-  },
+//persist config
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["auth", "profile"], // ONLY persist auth + profile
+};
+
+//root reducer
+const rootReducer = combineReducers({
+  items: PCardSlice.reducer,
+  fetchStatus: FetchStatusSlice.reducer,
+  cart: CartSlice.reducer,
+  cartOperators: CartOperatorsSlice.reducer,
+  otp: OTPSlice.reducer,
+  profile: ProfileSlice.reducer,
+  auth: AuthSlice.reducer,
 });
 
-buynextStore.subscribe(() => {
-  const state = buynextStore.getState();
-  localStorage.setItem("reduxState", JSON.stringify(state));
+//persisted reducer
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+//store
+export const store = configureStore({
+  reducer: persistedReducer,
 });
 
-export default buynextStore;
+// persistor
+export const persistor = persistStore(store);

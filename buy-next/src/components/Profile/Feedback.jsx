@@ -10,7 +10,7 @@ const FeedBack = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/terms.webp"
             alt=""
             width="32"
             height="32"
@@ -29,7 +29,7 @@ const FeedBack = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/faqs.webp"
             alt=""
             width="32"
             height="32"

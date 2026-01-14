@@ -12,7 +12,7 @@ const Account = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/edit.png"
             alt=""
             width="32"
             height="32"
@@ -33,7 +33,7 @@ const Account = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/address.png"
             alt=""
             width="32"
             height="32"
@@ -52,7 +52,7 @@ const Account = () => {
           aria-current="true"
         >
           <img
-            src="https://github.com/twbs.png"
+            src="/Profile/notification.png"
             alt=""
             width="32"
             height="32"
