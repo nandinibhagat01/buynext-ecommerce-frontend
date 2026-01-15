@@ -1,5 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { CartActions } from "../store/CartSlice";
+import { GoHeart } from "react-icons/go";
+import { FcLike } from "react-icons/fc";
+import { WishlistActions } from "../store/WishlistSlice";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -12,15 +15,30 @@ const ProductCard = ({ product }) => {
   const removeFromCart = () => {
     dispatch(CartActions.removeFromCart(product.id));
   };
+
+  const wishlistItems = useSelector((state) => state.wishlist);
+  const isWishlisted = wishlistItems.includes(product.id);
+  const toggleWishlist = () => {
+    if (isWishlisted) {
+      dispatch(WishlistActions.removeFromWishlist(product.id));
+    } else {
+      dispatch(WishlistActions.addToWishlist(product.id));
+    }
+  };
   return (
     <div className="col">
       <div className="card h-100 shadow-sm">
-        <img
-          src={product.image}
-          className="card-img-top"
-          alt={product.name}
-          style={{ height: "400px", objectFit: "cover" }}
-        />
+        <div className="image-container">
+          <img
+            src={product.image}
+            className="card-img-top"
+            alt={product.name}
+            style={{ height: "400px", objectFit: "cover" }}
+          />
+          <div className="wishlist-icon" onClick={toggleWishlist}>
+            {isWishlisted ? <FcLike /> : <GoHeart />}
+          </div>
+        </div>
         <div className="card-body d-flex flex-column">
           <p>{product.company}</p>
           <h5 className="card-title">{product.name}</h5>

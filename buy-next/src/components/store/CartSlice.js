@@ -11,20 +11,11 @@ const CartSlice = createSlice(
       removeFromCart: (state, action) => {
         return state.filter((itemId) => itemId !== action.payload);
       },
+      clearCart: () => {
+      return [];
+    },
     },
   },
-  {
-    name: "cartOperators",
-    initialState: { qty: 1 },
-    reducers: {
-      increment: (state) => {
-        state.qty++;
-      },
-      decrement: (state) => {
-        state.qty--;
-      },
-    },
-  }
 );
 export const CartActions = CartSlice.actions;
 

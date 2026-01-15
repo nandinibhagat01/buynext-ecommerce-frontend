@@ -14,6 +14,7 @@ import Profile from "./components/routes/Profile.jsx";
 import EditProfile from "./components/Profile/EditProfile.jsx";
 import { store, persistor } from "./components/store";
 import { PersistGate } from "redux-persist/integration/react";
+import Wishlist from "./components/routes/Wishlist.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/EditProfile",
         element: <EditProfile />,
+      },
+      {
+        path: "/Wishlist",
+        element: <Wishlist />,
       },
     ],
   },

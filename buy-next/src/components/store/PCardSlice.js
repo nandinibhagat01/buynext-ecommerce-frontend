@@ -1,15 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const PCardSlice= createSlice({
+const PCardSlice = createSlice({
   name: "items",
   initialState: [],
-  reducers:{
-    addInitialProducts:(state, action)=>{
+  reducers: {
+    addInitialProducts: (state, action) => {
       return action.payload;
-    }
-  }
-
-})
-export const PCardActions=PCardSlice.actions;
+    },
+  },
+});
+export const PCardActions = PCardSlice.actions;
 
 export default PCardSlice;

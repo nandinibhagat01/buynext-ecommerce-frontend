@@ -22,13 +22,14 @@ const NavItems = [
     icon: FcLike,
     path: "/Wishlist",
     className: "nav-link text-dark",
+    showBadge: "wishlist",
   },
   {
     label: "Cart",
     icon: BsCart3,
     path: "/Cart",
     className: "nav-link text-dark",
-    showBadge: true,
+    showBadge: "cart",
   },
   {
     label: "Profile",

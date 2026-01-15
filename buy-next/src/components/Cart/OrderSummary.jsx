@@ -13,7 +13,7 @@ const OrderSummary = () => {
   finalItems.forEach((item) => {
     const qty = quantities[item.id] || 1;
     Total += item.price * qty;
-    TotalDiscount = ((item.original_price * item.discount) / 100) * qty;
+    TotalDiscount += ((item.original_price * item.discount) / 100) * qty;
   });
   let finalPayment = Total - TotalDiscount;
   return (

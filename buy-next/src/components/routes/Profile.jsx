@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { AuthActions } from "../store/AuthSlice";
 import { ProfileActions } from "../store/ProfileSlice";
 import { VscAccount } from "react-icons/vsc";
+import { CartActions } from "../store/CartSlice";
+import { WishlistActions } from "../store/WishlistSlice";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -20,6 +22,8 @@ const Profile = () => {
   const handleLogout = () => {
     dispatch(AuthActions.logout());
     dispatch(ProfileActions.clearProfile());
+    dispatch(WishlistActions.clearWishlist());
+    dispatch(CartActions.clearCart());
     navigate("/");
   };
 

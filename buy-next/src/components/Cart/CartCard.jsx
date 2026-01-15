@@ -53,7 +53,21 @@ const CartCard = ({ item }) => {
   return (
     <div style={{ margin: "10px" }}>
       <div className="container">
-        <div className="card mb-3">
+        <div className="card mb-3 position-relative pt-4">
+          <button
+            type="button"
+            className="btn-close position-absolute bg-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            style={{
+              top: "8px",
+              right: "8px",
+              zIndex: 10,
+              borderRadius: "50%",
+              padding: "6px",
+            }}
+            onClick={() => dispatch(CartActions.removeFromCart(item.id))}
+          />
           <div className="row g-0 align-items-center">
             {/* Image */}
             <div className="col-md-2 text-center">
@@ -114,14 +128,7 @@ const CartCard = ({ item }) => {
             </div>
 
             {/* Buttons */}
-            <CardButtons></CardButtons>
-            <button
-              className="btn btn-outline-danger rounded-pill bg-pink-100 text-red-600 cart-btn"
-              type="button"
-              onClick={() => dispatch(CartActions.removeFromCart(item.id))}
-            >
-              Remove this Item
-            </button>
+            <CardButtons category={item.category} product={item}></CardButtons>
           </div>
         </div>
       </div>

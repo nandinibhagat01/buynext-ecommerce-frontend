@@ -8,12 +8,13 @@ import CartOperatorsSlice from "./CartOperatorsSlice";
 import OTPSlice from "./OTPSlice";
 import ProfileSlice from "./ProfileSlice";
 import AuthSlice from "./AuthSlice";
+import WishlistSlice from "./WishlistSlice";
 
 //persist config
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth", "profile"], // ONLY persist auth + profile
+  whitelist: ["auth", "profile", "cart", "cartOperators", "wishlist"], // ONLY persist auth + profile
 };
 
 //root reducer
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   otp: OTPSlice.reducer,
   profile: ProfileSlice.reducer,
   auth: AuthSlice.reducer,
+  wishlist: WishlistSlice.reducer,
 });
 
 //persisted reducer
@@ -33,6 +35,19 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 //store
 export const store = configureStore({
   reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [
+          "persist/PERSIST",
+          "persist/REHYDRATE",
+          "persist/FLUSH",
+          "persist/PAUSE",
+          "persist/PURGE",
+          "persist/REGISTER",
+        ],
+      },
+    }),
 });
 
 // persistor
